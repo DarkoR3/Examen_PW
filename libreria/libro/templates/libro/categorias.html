@@ -1,0 +1,149 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'libro/css/style.css' %}">
+
+    <style>
+      .hidden{
+        display: none;
+      }
+    </style>
+</head>
+<body>
+   
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-juri">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-book"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+            {% for i in navbar %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{i.url_nav}}"> {{i.nom_nav}} <span class="sr-only">(current)</span></a>
+            </li>
+            {% endfor %}
+          
+
+          </ul>
+        </div>
+      </nav>
+    <!--Titulo-->
+      <br>
+      <div class="container">
+        <div class="row my-2">
+          <div class="col-md-12">
+            <h3 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" >Catálogo de Categorias</h3>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <button id="desplegar" class="btn btn-light" > Ver Categorías </button>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!--Tabla categoria-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table hidden table-bordered table-secondary" id="tablaCategorias">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripción</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in categorias %}
+                <tr>
+                  <th scope="row"> {{i.id_categorias}} </th>
+                  <th scope="row"> {{i.nom_categorias}} </th>
+                  <th scope="row"> {{i.descrip_categorias}} </th>
+                </tr>
+                {% endfor %}
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- final-->
+      <br>
+      <br>
+      <div class="container-fluid">
+        <div class="row" style="background-color: rgb(31, 43, 35); margin: 10 px;">
+          <div class="col-lg-4 text-center">
+            <br>
+            <img src="https://png.pngtree.com/png-vector/20231211/ourmid/pngtree-cute-cat-are-read-book-png-image_11228123.png" alt="" height="150px" width="150px">
+            <hr>
+          </div>
+      
+          <div class="col-lg-4">
+            <br>
+            <h4 style="color: azure;">Librería Yuro</h4>
+            <ul class="list-unstyled" style="color: azure;">
+              <li><i class="fa-brands fa-whatsapp"></i></i> Whatsapp: +569 3333 4444</li>
+              <li><i class="fa-solid fa-building"></i> Direción: Av. Gatito 1234</li>
+              <li><i class="fa-solid fa-envelope"></i> Correo: libreria.yuro@contacto.cl </li>
+            </ul>
+      
+            <hr>
+          </div>
+      
+          <div class="col-lg-4">
+            <br>
+            <h4 style="color: azure;">Redes Sociales</h4>
+            <ul class="list-unstyled" style="color: azure;">
+              <li><i class="fa-brands fa-twitter"></i> Twiter: @libreria.yuro</li>
+              <li><i class="fa-brands fa-square-facebook"></i> Facebook: libreria.yuro</li>
+              <li><i class="fa-brands fa-square-instagram"></i> Instagram: libreria.yuro </li>
+            </ul>
+      
+            <hr>
+          </div>
+      
+        </div>
+      
+      </div>
+
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/687c54669e.js" crossorigin="anonymous"></script>
+
+      <!-- BOTON DESPLEGLAR TABLA -->
+      <script>
+        $(document).ready(function(){
+          console.log('Iniciando ejecución del código');
+          $('#desplegar').on('click', function(){
+            console.log('Ejecutando boton ver más');
+            $('#tablaCategorias').toggleClass('hidden');
+          });
+        });
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* Navbar */
+
+.navbar{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.bg-juri{
+    background-color: rgb(31, 43, 35);
+    color: #E3F4E8;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #E3F4E8;
+
+}
+
+.fa-book{
+    color: #E3F4E8;
+}
+
+.navbar-brand{
+    color: #E3F4E8;
+}
+
+/*body*/
+
+body{
+    background-color:#E3F4E8;
+}
+
+h1{
+    color: black;
+}
+
+p{
+    color: black;
+}
+
+.jumbotron{
+    background-color: #D1DEB4;
+}
+
+h3{
+    color: black;
+}
+
+.table-secondary{
+    background-color: #D1DEB4;
+    color: black;
+}
+
+.btn-light{
+    background-color:rgb(31, 43, 35) ;
+    color: #E3F4E8;
+}
+
+.hidden{
+    display: none;
+}
